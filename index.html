@@ -9,34 +9,54 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="src/style.css" />
     <title>Meteo App</title>
   </head>
   <body>
-    <header>
-      <form>
-        <input type="search" placeholder="Enter a city..." required />
-        <input type="submit" value="Search" />
-      </form>
-    </header>
-    <main>
-      <h1>Paris</h1>
-      <p>
-        Tuesday 11:27, clear sky
-        <br />
-        Humidity: <strong>59%</strong>, Wind: <strong> 4.12km/h</strong>
-      </p>
-      <p>☀️ 25 °C</p>
-    </main>
-    <footer>
-      This project was coded by
-      <a href="https://github.com/Olga16119">Olha Baryshenska</a>, is
-      <a href="https://github.com/Olga16119/meteo-app"
-        >open-sourced on GitHub</a
-      >
-      and
-      <a href="https://meteo-shecodes-application.netlify.app/"
-        >hosted on Netlify</a
-      >
-    </footer>
+    <div class="app-container">
+      <header>
+        <form>
+          <input
+            class="search-input"
+            type="search"
+            placeholder="Enter a city..."
+            required
+          />
+          <input class="submit-input" type="submit" value="Search" />
+        </form>
+      </header>
+      <main>
+        <div class="weather-details">
+          <div>
+            <h1>Paris</h1>
+            <p class="weather-description">
+              Tuesday 11:27, clear sky
+              <br />
+              Humidity: <strong>59%</strong>, Wind: <strong> 4.12km/h</strong>
+            </p>
+          </div>
+          <div class="temperature-container">
+            <div class="icon">☀️</div>
+            <div class="temperature-degrees">25</div>
+            <div class="units">°C</div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        This project was coded by
+        <a href="https://github.com/Olga16119" target="_blank"
+          >Olha Baryshenska</a
+        >, is
+        <a href="https://github.com/Olga16119/meteo-app" target="_blank"
+          >open-sourced on GitHub</a
+        >
+        and
+        <a
+          href="https://meteo-shecodes-application.netlify.app/"
+          target="_blank"
+          >hosted on Netlify</a
+        >
+      </footer>
+    </div>
   </body>
 </html>
