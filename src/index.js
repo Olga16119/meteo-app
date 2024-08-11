@@ -22,6 +22,30 @@ function updateWeather(responce) {
 
   let speedWindElement = document.querySelector("#speed");
   speedWindElement.innerHTML = `${responce.data.wind.speed}km/h`;
+
+  let timeElement = document.querySelector("#time");
+  let date = new Date(responce.data.time * 1000);
+  timeElement.innerHTML = formatDate(date);
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.innerHTML = `<img src="${responce.data.condition.icon_url}" class="icon"/>`;
+}
+
+function formatDate(date) {
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
 }
 
 function handleSearch(event) {
@@ -35,4 +59,4 @@ function handleSearch(event) {
 let formElement = document.querySelector("#search-form");
 formElement.addEventListener("submit", handleSearch);
 
-searhCity("Paris")
+searhCity("Paris");

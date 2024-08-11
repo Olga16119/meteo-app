@@ -57,6 +57,10 @@ a {
   color: rgba(39, 33, 66, 0.4);
 }
 
+.weather-description strong {
+  color: #f65282;
+}
+
 .temperature-container {
   display: flex;
   align-items: center;
