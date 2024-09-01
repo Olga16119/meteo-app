@@ -6,7 +6,6 @@ function searhCity(city) {
 }
 
 function updateWeather(responce) {
-  console.log(responce.data);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = responce.data.city;
@@ -29,6 +28,8 @@ function updateWeather(responce) {
 
   let iconElement = document.querySelector("#icon");
   iconElement.innerHTML = `<img src="${responce.data.condition.icon_url}" class="icon"/>`;
+
+  getForecast(responce.data.city);
 }
 
 function formatDate(date) {
@@ -56,7 +57,14 @@ function handleSearch(event) {
   searhCity(searchInputElement.value);
 }
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "ef0t819co4fbb2a23ffa030681b76557";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(responce) {
+  console.log(responce.data);
   let forecast = "";
 
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -81,4 +89,3 @@ let formElement = document.querySelector("#search-form");
 formElement.addEventListener("submit", handleSearch);
 
 searhCity("Paris");
-displayForecast();
