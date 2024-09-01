@@ -82,32 +82,33 @@ a {
   margin-bottom: 38px;
 }
 
-.weather-forecast{
+.weather-forecast {
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
 }
 
-.weather-forecast-date{
+.weather-forecast-date {
   text-align: center;
   font-size: 16px;
   line-height: 20px;
   margin-top: 10px;
-  color:rgba(39, 33, 66, 0.4);
+  color: rgba(39, 33, 66, 0.4);
 }
 
-.weather-forecast-icon{
-  text-align: center;
-  font-size: 38px;
-  margin-top: 10px;
+.weather-forecast-icon {
+  display: block;
+  width: 88px;
+  height: 88px;
+  margin: 0 auto;
 }
-.weather-forecast-temperatures{
+.weather-forecast-temperatures {
   display: flex;
   justify-content: center;
   margin-top: 10px;
   color: #f65282;
 }
 
-.weather-forecast-temperature{
+.weather-forecast-temperature {
   padding: 0 10px;
 }
